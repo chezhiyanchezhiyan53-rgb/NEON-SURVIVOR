@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>NEON SURVIVOR</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-wrap">
+    <canvas id="game"></canvas>
+
+    <button id="btn-mute" type="button" aria-label="Mute">♪</button>
+
+    <div id="screens">
+      <section id="screen-menu" class="screen active" aria-label="Main menu">
+        <div class="menu-glow"></div>
+        <p class="eyebrow">ARCADE SURVIVAL</p>
+        <h1 class="title">NEON<br />SURVIVOR</h1>
+        <p class="tagline">Stay alive. Stack combos. Hunt the boss.</p>
+        <div class="menu-actions">
+          <button id="btn-start" class="btn primary" type="button">START GAME</button>
+          <button id="btn-how" class="btn" type="button">HOW TO PLAY</button>
+          <button id="btn-scores" class="btn" type="button">HIGH SCORES</button>
+        </div>
+        <div class="controls-card">
+          <h2>CONTROLS</h2>
+          <ul>
+            <li><span>Move</span><b>WASD / Arrows</b></li>
+            <li><span>Shoot</span><b>Mouse click</b></li>
+            <li><span>Shield</span><b>Space</b></li>
+            <li><span>Weapons</span><b>1 / 2 / 3</b></li>
+            <li><span>Pause</span><b>P</b></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="screen-how" class="screen" aria-label="How to play">
+        <div class="panel">
+          <h2>HOW TO PLAY</h2>
+          <div class="how-grid">
+            <article>
+              <h3>Movement</h3>
+              <p>Pilot your ship with WASD or arrow keys. Stay inside the neon arena and keep moving — standing still is a death sentence.</p>
+            </article>
+            <article>
+              <h3>Shooting</h3>
+              <p>Aim with the mouse and click to fire. On mobile, hold SHOOT. Projectiles travel toward your aim point.</p>
+            </article>
+            <article>
+              <h3>Weapons</h3>
+              <p><b>1 Normal</b> — balanced single shot.<br /><b>2 Spread</b> — five bolts, lower damage each.<br /><b>3 Laser</b> — piercing beam, longer cooldown.</p>
+            </article>
+            <article>
+              <h3>Power-ups</h3>
+              <p>Grab glowing pickups: Shield, Slow Motion, Double Score, Rapid Fire, and Health. Only one timed effect stacks visually on the HUD at a time, but durations are independent.</p>
+            </article>
+            <article>
+              <h3>Enemies</h3>
+              <p>Basics chase. Fast units rush. Tanks soak hits. Shooters keep range. Mix changes as levels rise.</p>
+            </article>
+            <article>
+              <h3>Scoring</h3>
+              <p>Kills, coins, survival time, bosses, and power-ups all add score. Chain kills for a combo multiplier. Taking damage resets combo.</p>
+            </article>
+            <article>
+              <h3>Bosses</h3>
+              <p>Every 5 levels a boss arrives. Learn its patterns, drain the health bar, and collect the reward drop.</p>
+            </article>
+            <article>
+              <h3>Controls</h3>
+              <p>Desktop: WASD, mouse, Space, 1-3, P. Mobile: left joystick, SHOOT, SHIELD, PAUSE. Mute with the speaker button.</p>
+            </article>
+          </div>
+          <button id="btn-how-back" class="btn primary" type="button">BACK</button>
+        </div>
+      </section>
+
+      <section id="screen-scores" class="screen" aria-label="High scores">
+        <div class="panel">
+          <h2>HIGH SCORES</h2>
+          <ol id="score-list" class="score-list"></ol>
+          <button id="btn-scores-back" class="btn primary" type="button">BACK</button>
+        </div>
+      </section>
+
+      <section id="screen-pause" class="screen overlay-screen" aria-label="Paused">
+        <div class="panel compact">
+          <h2>PAUSED</h2>
+          <p class="muted">Systems frozen. Resume when ready.</p>
+          <button id="btn-resume" class="btn primary" type="button">RESUME</button>
+          <button id="btn-pause-menu" class="btn" type="button">MAIN MENU</button>
+        </div>
+      </section>
+
+      <section id="screen-over" class="screen overlay-screen" aria-label="Game over">
+        <div class="panel compact">
+          <h2>GAME OVER</h2>
+          <div id="over-stats" class="stats"></div>
+          <button id="btn-restart" class="btn primary" type="button">RESTART</button>
+          <button id="btn-over-menu" class="btn" type="button">MAIN MENU</button>
+        </div>
+      </section>
+
+      <section id="screen-name" class="screen overlay-screen" aria-label="Enter name">
+        <div class="panel compact">
+          <h2>NEW HIGH SCORE</h2>
+          <p class="muted">Enter your callsign.</p>
+          <input id="name-input" maxlength="12" placeholder="ACE" autocomplete="off" spellcheck="false" />
+          <button id="btn-save-name" class="btn primary" type="button">SAVE</button>
+        </div>
+      </section>
+    </div>
+
+    <div id="mobile-controls" aria-hidden="true">
+      <div id="joystick" class="joystick">
+        <div id="joystick-knob" class="knob"></div>
+      </div>
+      <div class="mobile-actions">
+        <button id="btn-pause-mobile" type="button">PAUSE</button>
+        <button id="btn-shield-mobile" type="button">SHIELD</button>
+        <button id="btn-shoot-mobile" type="button">SHOOT</button>
+      </div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
