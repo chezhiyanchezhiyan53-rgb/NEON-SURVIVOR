@@ -13,17 +13,9 @@ Neon Survivor is a browser-based arcade survival shooter built with vanilla HTML
 - Sound effects with mute support
 - No frameworks, dependencies, or build step
 
-## Run Locally
+## Run Live
 
-Because this is a static web project, you can open `index.html` directly in a browser.
-
-For a local development server, run one of these commands from the project folder:
-
-```powershell
-python -m http.server 8000
-```
-
-Then open <http://localhost:8000>.
+Then open https://chezhiyanchezhiyan53-rgb.github.io/NEON-SURVIVOR/
 
 ## Controls
 
